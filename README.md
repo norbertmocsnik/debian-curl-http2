@@ -1,5 +1,5 @@
 # debian-curl-http2
-Docker image that builds curl with nghttp2 &amp; libssh2 in debian:jessie.
+Docker image that builds curl with nghttp2 &amp; OpenSSL 1.0.2 in debian:jessie.
 
 ```
 # curl --version
