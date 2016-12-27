@@ -9,3 +9,5 @@ Features: IPv6 Largefile NTLM NTLM_WB SSL libz TLS-SRP HTTP2 UnixSockets HTTPS-p
 ```
 
 Primarily built for connecting to Apple Push Notification Service (APNS) through HTTP/2.
+
+See https://github.com/norbertmocsnik/debian-curl-http2
