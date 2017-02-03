@@ -16,9 +16,9 @@ RUN apt-get update \
         libjemalloc-dev cython python3-dev python-setuptools \
         --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
-    && wget https://github.com/nghttp2/nghttp2/releases/download/v1.17.0/nghttp2-1.17.0.tar.gz \
-    && tar -xvzf nghttp2-1.17.0.tar.gz \
-    && cd nghttp2-1.17.0 \
+    && wget https://github.com/nghttp2/nghttp2/releases/download/v1.19.0/nghttp2-1.19.0.tar.gz \
+    && tar -xvzf nghttp2-1.19.0.tar.gz \
+    && cd nghttp2-1.19.0 \
     && autoreconf -i \
     && automake \
     && autoconf \
@@ -26,8 +26,8 @@ RUN apt-get update \
     && make \
     && make install \
     && cd .. \
-    && rm -rf nghttp2-1.17.0 \
-    && rm nghttp2-1.17.0.tar.gz \
+    && rm -rf nghttp2-1.19.0 \
+    && rm nghttp2-1.19.0.tar.gz \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
         autoconf automake autotools-dev binutils cpp cpp-4.9 cython dh-python file \
         g++ g++-4.9 gcc gcc-4.9 libasan1 libatomic1 libcilkrts5 libcloog-isl4 \
