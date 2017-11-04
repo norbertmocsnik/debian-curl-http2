@@ -16,9 +16,9 @@ RUN apt-get update \
         libjemalloc-dev cython python3-dev python-setuptools \
         --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
-    && wget https://github.com/nghttp2/nghttp2/releases/download/v1.25.0/nghttp2-1.25.0.tar.gz \
-    && tar -xvzf nghttp2-1.25.0.tar.gz \
-    && cd nghttp2-1.25.0 \
+    && wget https://github.com/nghttp2/nghttp2/releases/download/v1.27.0/nghttp2-1.27.0.tar.gz \
+    && tar -xvzf nghttp2-1.27.0.tar.gz \
+    && cd nghttp2-1.27.0 \
     && autoreconf -i \
     && automake \
     && autoconf \
@@ -26,8 +26,8 @@ RUN apt-get update \
     && make \
     && make install \
     && cd .. \
-    && rm -rf nghttp2-1.25.0 \
-    && rm nghttp2-1.25.0.tar.gz \
+    && rm -rf nghttp2-1.27.0 \
+    && rm nghttp2-1.27.0.tar.gz \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
         autoconf automake autotools-dev binutils cpp cpp-4.9 cython dh-python file \
         g++ g++-4.9 gcc gcc-4.9 libasan1 libatomic1 libcilkrts5 libcloog-isl4 \
@@ -53,9 +53,9 @@ RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' > /etc/apt/sou
     && apt-get -t jessie-backports install -y libssl-dev --no-install-recommends \
     && apt-get build-dep -y curl --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
-    && wget https://curl.haxx.se/download/curl-7.55.1.tar.gz \
-    && tar -xvzf curl-7.55.1.tar.gz \
-    && cd curl-7.55.1 \
+    && wget https://curl.haxx.se/download/curl-7.56.1.tar.gz \
+    && tar -xvzf curl-7.56.1.tar.gz \
+    && cd curl-7.56.1 \
     && ./configure --with-nghttp2=/usr/local \
         --disable-ldap --disable-sspi --without-librtmp \
         --disable-dict --disable-telnet --disable-tftp --disable-rtsp \
@@ -64,8 +64,8 @@ RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' > /etc/apt/sou
     && make install \
     && ldconfig \
     && cd .. \
-    && rm -rf curl-7.55.1 \
-    && rm curl-7.55.1.tar.gz \
+    && rm -rf curl-7.56.1 \
+    && rm curl-7.56.1.tar.gz \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
         autoconf automake autotools-dev binutils bsdmainutils build-essential bzip2 \
         comerr-dev cpp cpp-4.9 debhelper diffstat dpkg-dev file g++ g++-4.9 gcc \
