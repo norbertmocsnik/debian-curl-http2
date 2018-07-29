@@ -53,9 +53,9 @@ RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' > /etc/apt/sou
     && apt-get -t jessie-backports install -y libssl-dev --no-install-recommends \
     && apt-get build-dep -y curl --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
-    && wget https://curl.haxx.se/download/curl-7.59.0.tar.gz \
-    && tar -xvzf curl-7.59.0.tar.gz \
-    && cd curl-7.59.0 \
+    && wget https://curl.haxx.se/download/curl-7.61.0.tar.gz \
+    && tar -xvzf curl-7.61.0.tar.gz \
+    && cd curl-7.61.0 \
     && ./configure --with-nghttp2=/usr/local \
         --disable-ldap --disable-sspi --without-librtmp \
         --disable-dict --disable-telnet --disable-tftp --disable-rtsp \
@@ -64,8 +64,8 @@ RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' > /etc/apt/sou
     && make install \
     && ldconfig \
     && cd .. \
-    && rm -rf curl-7.59.0 \
-    && rm curl-7.59.0.tar.gz \
+    && rm -rf curl-7.61.0 \
+    && rm curl-7.61.0.tar.gz \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
         autoconf automake autotools-dev binutils bsdmainutils build-essential bzip2 \
         comerr-dev cpp cpp-4.9 debhelper diffstat dpkg-dev file g++ g++-4.9 gcc \
